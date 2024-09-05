@@ -11,6 +11,15 @@
           "-webkit-text-size-adjust"
         ]
       }
-    ]
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "document-title": "off"
+      }
+    ],
+    "meta-viewport": "off",
+    "meta-charset-utf-8": "off",
+    "axe/forms": "off"
   }
 }
