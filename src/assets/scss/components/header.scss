@@ -73,7 +73,7 @@
     transition: background-color var(--transition);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 2px;
       left: 3px;
@@ -145,7 +145,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       bottom: -5px;

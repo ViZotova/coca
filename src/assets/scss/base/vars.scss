@@ -28,7 +28,7 @@
 
   @include mini-desktop {
     --container-width: 1000px;
-  } 
+  }
 
   @include tablet {
     --container-width: 860px;
@@ -62,6 +62,6 @@
   // success colors
   --success-color-70: #e2f8f033;
 
-   // overview coors
+  // overview coors
   --overview-bg-color: #18181d;
 }
