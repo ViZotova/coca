@@ -19,16 +19,27 @@
   --logo-color-text: #101010;
   --logo-color-circle: #101010;
 
+  // overview coors
+  --overview-bg-color: #1d1e25;
+
   // container
   --container-padding: 15px;
   --container-width: 1200px;
 
-  @include mobile {
-  --container-width: 480px;
+  @include mini-desktop {
+    --container-width: 1000px;
+  } 
+
+  @include tablet {
+    --container-width: 860px;
   }
-  
+
+  @include mobile {
+    --container-width: 480px;
+  }
+
   // transition
-    --transition: 0.2s ease-in-out;
+  --transition: 0.2s ease-in-out;
 
   // z-index
   --z-index-0: -1;
@@ -50,4 +61,7 @@
 
   // success colors
   --success-color-70: #e2f8f033;
+
+   // overview coors
+  --overview-bg-color: #18181d;
 }
