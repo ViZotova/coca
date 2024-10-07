@@ -39,6 +39,7 @@
     @include flex-all-center;
     gap: 10px 25px;
     flex-wrap: wrap;
+    transition: var(--transition);
 
     @include mobile {
       gap: 10px;
@@ -51,5 +52,18 @@
     width: 160px;
     height: 90px;
     background-color: #fff;
+  }
+
+  &__slider {
+    overflow: hidden;
+    width: 100%;
+
+    @include mobile {
+      min-width: 100%;
+    }
+    
+    @include small-mobile {
+      min-width: 100%;
+    }
   }
 }

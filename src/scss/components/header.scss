@@ -190,3 +190,12 @@
 .burger {
   @include burger;
 }
+
+.fixed {
+            position: fixed;
+            top: 0;
+            z-index: var(--z-index-3);
+            width: 100%;
+            box-shadow: 0 2px 5px #00000080;
+            background-color: var(--neutral-color-10);
+        }

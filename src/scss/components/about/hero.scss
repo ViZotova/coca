@@ -1,0 +1,165 @@
+.hero {
+  padding: 105px 0 205px;
+
+  @include tablet {
+    padding: 60px 0 150px;
+  }
+
+  &__container {
+    margin: 105px -200px 165px 120px;
+
+    @include small-tablet {
+      margin: 105px 60px 160px;
+    }
+  }
+  
+
+  &__title {
+    margin-bottom: 118px;
+    max-width: 959px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      margin-bottom: 90px;
+      margin-left: 0;
+      text-align: center
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+  }
+
+  &__body {
+    @include flex-all-between;
+    margin-bottom: 135px;
+
+    @include tablet {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+
+    &-descr {
+      &-span {
+        margin-left: 24px;
+        max-width: 738px;
+        color: var(--neutral-color-100); 
+
+        @include tablet{
+          margin-bottom: 50px;
+          margin-left: 0;
+          text-align: center;
+        }
+
+        @include mobile {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    &-btns {
+      @include flex-all-center;
+      position: absolute;
+      top: 126px;
+      left: 33%;
+      z-index: var(--z-index-2);
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      transform: translateX(-50%);
+
+      @include small-tablet {
+        display: none;
+      }
+  }
+}
+
+&__wrapper {
+  @include flex-justify-center;
+  gap: 32px;
+
+  @include small-tablet {
+    @include flex-align-center;
+    flex-direction: column;
+  }
+}
+
+&__article {
+  &-img {
+    height: 460px;
+
+    @include mini-desktop {
+      height: auto;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+  
+  &-image {
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &-head {
+    max-width: 494px;
+
+    &-title {
+      margin-bottom: 8px;
+      line-height: 150%;
+      letter-spacing: -1%;
+      color: var(--neutral-color-100);
+
+      @include small-tablet {
+        font-size: 20px;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 32px;
+      font-weight: 500;
+      line-height: 32px;
+      color: var(--neutral-color-150);
+
+      @include small-tablet {
+        margin-bottom: 15px;
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+
+    &-btn {
+      padding: 16px 34px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      color: #FFF;
+      background-color: #1D1E25;
+
+      @include small-desktop {
+        padding: 10px 20px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.text-p-subtitle::before {
+  width: 30%;
+  transform: translateY(-83px);
+}
+}

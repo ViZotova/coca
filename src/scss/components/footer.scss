@@ -145,6 +145,13 @@
 
     @include mobile {
       min-width: 143px;
+      cursor: pointer;
+    }
+  }
+
+  &__sublist {
+    @include mobile {
+      display: none;
     }
   }
 
@@ -277,4 +284,8 @@
     line-height: 143%;
     color: #fff;
   }
+}
+
+.active {
+  display: block;
 }
