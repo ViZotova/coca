@@ -32,6 +32,11 @@
     @include mobile {
       gap: 36px;
     }
+
+    &-api {
+      width: 600px;
+      height: 400px;
+    }
   }
 
   &__contacts {

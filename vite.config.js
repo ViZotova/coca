@@ -11,6 +11,7 @@ export default defineConfig({
   },
   publicDir: "./src/assers",
   build: {
+    sourcemap: true,
     outDir: "../dist",
     emptyOutDir: "true",
     rollupOptions: {

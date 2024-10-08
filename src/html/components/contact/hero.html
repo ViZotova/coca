@@ -4,9 +4,18 @@
       Contact our team to find out more
     </h2>
     <div class="hero__map">
-      <script type="text/javascript" charset="utf-8" async
-      src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addc46d5233bfdc489ee64171eda4a2f5a3c5f3e2386eb551bc206ea48956f1ec&amp;width=100%&amp;height=545&amp;lang=ru_RU&amp;scroll=true">
-      </script>
+      <div class="hero__map-api" id="map"></div>
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=359bb2b1-ebc8-46f3-a2a2-2cee85dc957a&lang=ru_RU" type="text/javascript">
+  </script>
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+      let myMap = new ymaps.Map("map", {
+        center: [-37.800013,144.984089],
+        zoom: 7
+      });
+    }
+  </script>
       <ul class="hero__contacts">
         <li class="hero__contacts-item">
           <h3 class="hero__contacts-item-title text-p-large">
