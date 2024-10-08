@@ -1,15 +1,35 @@
+/* stylelint-disable shorthand-property-no-redundant-values */
 .hero {
-  padding: 105px 0 205px;
+  position: relative;
 
-  @include tablet {
-    padding: 60px 0 150px;
+  &-decor {
+    &::before {
+    content: '';
+    position: absolute;
+    top: 1000px;
+    left: 11px;
+    z-index: var(--z-index-0);
+    display: inline-block;
+    border-radius: 50%;
+    width: 551px;
+    height: 551px;
+    background: #fa7515;
+    opacity: 0.2;
+    filter: blur(220px);
   }
+}
 
   &__container {
-    margin: 105px -200px 165px 120px;
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding: 0 0 0 120px;
+    padding-bottom: 80px;
 
     @include small-tablet {
-      margin: 105px 60px 160px;
+      margin: 0 0 40px;
+    }
+
+    @include mobile {
+      margin: 0 20px 0;
     }
   }
   
@@ -29,7 +49,7 @@
 
     @include mobile {
       margin-bottom: 40px;
-      font-size: 36px;
+      font-size: 28px;
     }
   }
 
@@ -55,11 +75,12 @@
         @include tablet{
           margin-bottom: 50px;
           margin-left: 0;
+          max-width: 350px;
           text-align: center;
         }
 
         @include mobile {
-          font-size: 18px;
+          font-size: 16px;
         }
       }
     }
@@ -98,6 +119,7 @@
 
 &__article {
   &-img {
+    width: 50%;
     height: 460px;
 
     @include mini-desktop {

@@ -71,7 +71,7 @@ lable {
 // ==========================
 
 .container {
-  margin: 0 auto;
+  margin: 0 120px;
   padding: 0 var(--container-padding);
   max-width: calc(var(--container-width) + (var(--container-padding) * 2));
 }

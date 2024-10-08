@@ -1,0 +1,46 @@
+.quote {
+  padding: 85px 0;
+
+  @include tablet {
+    padding: 25px 0;
+  }
+
+  &__container {
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding-bottom: 80px;
+  }
+
+  &__content {
+    @include flex-justify-between;
+
+    @include tablet {
+      display: block;
+    }
+
+    &-title {
+      max-width: 480px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      color: var( --neutral-color-100);
+
+      @include tablet {
+        margin-bottom: 10px;
+        max-width: 250px;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    &-descr {
+      max-width: 522px;
+      font-weight: 600;
+      line-height: 150%;
+      color: var(--neutral-color-100);
+
+      @include tablet {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+}
