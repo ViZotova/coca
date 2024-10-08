@@ -7,15 +7,15 @@ export const usePriceSwitcher = () => {
   const priceList = {
     starter: {
       default: 120,
-      witchSale: 100,
+      witchSale: 120 * 12 * 0.8,
     },
     popular: {
       default: 1680,
-      witchSale: 1400,
+      witchSale: 1680 * 12 * 0.8,
     },
     enterprise: {
       default: 2520,
-      wtichSale: 2100,
+      wtichSale: 2520 * 12 * 0.8,
     },
   };
 
