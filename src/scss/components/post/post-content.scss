@@ -1,0 +1,210 @@
+/* stylelint-disable no-descending-specificity */
+.post {
+  padding: 105px 0 160px;
+
+  @include small-tablet {
+    padding: 60px 0 80px;
+  }
+
+  &__container {
+    max-width: calc(
+      var(--container-width-post) + (var(--container-padding) * 2)
+    );
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+  }
+
+  &__info {
+    &-top {
+      @include flex-justify-between;
+      align-items: flex-end;
+      margin-top: 80px;
+
+      &-author {
+        @include flex-align-center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      &-date {
+        margin-bottom: 4px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: end;
+        color: var(--neutral-color-150);
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 56px;
+
+      &-foto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      &-details {
+        max-width: 645px;
+      }
+
+      &-social {
+        @include flex-align-center;
+        gap: 32px;
+
+        a {
+          @include flex-all-center;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          background-color: #e8e9eb;
+          transition: all var(--transition);
+
+          &:hover {
+            img {
+              opacity: 0.8;
+            }
+          }
+        }
+
+        &-wrapper {
+          @include flex-align-center;
+          gap: 10px 24px;
+          flex-wrap: wrap;
+        }
+      }
+
+      &-author {
+        margin-top: 14px;
+
+        &-written {
+          margin-top: 16px;
+          font-weight: 400;
+          line-height: 1.5;
+          color: var(--neutral-color-150);
+        }
+
+        &-name {
+          margin-top: 16px;
+          font-weight: 600;
+          line-height: 1.3125;
+          letter-spacing: -0.03em;
+          color: var(--neutral-color-100);
+        }
+
+        &-profession {
+          margin-top: 16px;
+          font-weight: 500;
+          line-height: 1.625;
+          color: var(--neutral-color-150);
+        }
+
+        &-descr {
+          margin-top: 16px;
+          font-weight: 400;
+          line-height: 1.8;
+          color: var(--neutral-color-100);
+        }
+      }
+    }
+  }
+
+  &__author {
+    &-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-details {
+      font-style: normal;
+
+      &-name {
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--neutral-color-100);
+      }
+
+      &-profession {
+        font-weight: 500;
+        line-height: 1.625;
+        color: var(--neutral-color-150);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    margin-top: 24px;
+
+    /* Задаем соотношение сторон для контейнера */
+    padding-bottom: calc(545 / 940 * 100%);
+    width: 100%;
+    height: 0;
+    max-width: 940px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    margin-top: 80px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 56px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 1.2;
+      color: var(--neutral-color-140);
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--neutral-color-100);
+    }
+  }
+}
