@@ -1,20 +1,17 @@
 .quote {
-  padding: 85px 0;
-
-  @include tablet {
-    padding: 25px 0;
-  }
-
   &__container {
-    border-bottom: 1px solid var(--neutral-color-30);
-    padding-bottom: 80px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 87px 0 85px;
   }
 
   &__content {
-    @include flex-justify-between;
+    @include flex-align-center-between;
 
     @include tablet {
-      display: block;
+      gap: 20px;
+      flex-direction: column;
+      text-align: center;
     }
 
     &-title {
@@ -32,7 +29,7 @@
     }
 
     &-descr {
-      max-width: 522px;
+      max-width: 470px;
       font-weight: 600;
       line-height: 150%;
       color: var(--neutral-color-100);

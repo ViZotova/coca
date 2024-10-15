@@ -1,10 +1,13 @@
 import "/scss/pricing.scss";
 
-// components
-import { useTheme } from "./components/theme";
-import { useBurger } from "./components/burger";
-import { usePriceSwitcher } from "./components/pricing/plans.js";
-
+// Components
+import { useTheme } from "./components/theme.js";
 useTheme();
+import { useBurger } from "./components/burger.js";
 useBurger();
-usePriceSwitcher();
+import { useHeader } from "./components/header.js";
+useHeader();
+import { usePriceSwither } from "./components/pricing/plans.js";
+usePriceSwither();
+import { useAccordion } from "./components/accordion.js";
+useAccordion();

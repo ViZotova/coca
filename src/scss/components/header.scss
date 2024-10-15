@@ -1,21 +1,43 @@
 .header {
   padding: 26px 0 22px;
+  background-color: var(--neutral-color-10);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: 0.4s;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &--background-transparent {
+    background-color: transparent;
+  }
 
   @include mobile {
     padding: 22px 0 18px;
   }
 
   &__container {
-    @include flex-all-between;
+    @include flex-align-center-between;
   }
 
   &__logo {
-    position: relative;
     z-index: var(--z-index-4);
 
     & svg {
       @include mobile {
-        width: 130px;
+        max-width: 130px;
       }
 
       & path {
@@ -35,7 +57,7 @@
     gap: 111px;
 
     @include tablet {
-      gap: 60px;
+      gap: 50px;
     }
 
     @include small-tablet {
@@ -50,10 +72,7 @@
       background-color: var(--neutral-color-10);
       opacity: 0;
       visibility: hidden;
-      transition:
-        left var(--transition),
-        opacity var(--transition),
-        visibility var(--transition);
+      transition: all var(--transition);
 
       &--visible {
         left: 0;
@@ -63,37 +82,36 @@
     }
   }
 
+  // &__nav {
+  // }
+
   &__switcher {
     position: relative;
     border-radius: 13px;
     width: 63px;
     height: 27px;
     background-color: var(--neutral-color-130);
-    transform: translateY(8px);
+    transform: translateY(50%);
     transition: background-color var(--transition);
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 2px;
       left: 3px;
-      display: inline-block;
       border-radius: 50%;
       width: 23px;
       height: 23px;
       background-color: var(--neutral-color-120);
-      transition:
-        left var(--transition),
-        background-color var(--transition);
+      transition: all var(--transition);
     }
 
     &-text {
       position: absolute;
-      top: -24px;
+      bottom: 100%;
       left: 50%;
       font-weight: 600;
-      line-height: 150%;
-      text-align: center;
+      line-height: 1.5;
       color: var(--neutral-color-140);
       transform: translateX(-50%);
 
@@ -133,10 +151,13 @@
     }
   }
 
+  // &__item {
+  // }
+
   &__link {
     position: relative;
     font-weight: 500;
-    line-height: 162%;
+    line-height: 1.625;
     color: var(--neutral-color-100);
 
     @include small-tablet {
@@ -145,7 +166,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       right: 0;
       bottom: -5px;
@@ -154,9 +175,7 @@
       background-color: var(--neutral-color-100);
       opacity: 0;
       visibility: hidden;
-      transition:
-        opacity var(--transition),
-        visibility var(--transition);
+      transition: all var(--transition);
     }
 
     &:hover {
@@ -176,26 +195,15 @@
     background-color: #000000b3;
     opacity: 0;
     visibility: hidden;
-    transition:
-      opacity var(--transition),
-      visibility var(--transition);
+    transition: all var(--transition);
+  }
 
-    &--visible {
-      opacity: 1;
-      visibility: visible;
-    }
+  &--visible {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .burger {
   @include burger;
 }
-
-.fixed {
-            position: fixed;
-            top: 0;
-            z-index: var(--z-index-3);
-            width: 100%;
-            box-shadow: 0 2px 5px #00000080;
-            background-color: var(--neutral-color-10);
-        }

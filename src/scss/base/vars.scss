@@ -13,6 +13,7 @@
   --neutral-color-130: #d9d9d9;
   --neutral-color-140: #000;
   --neutral-color-150: #7E8492;
+  --neutral-color-160: #afb3bb;
 
   // Primary Color
   --primary-color-30: #1463FF;
@@ -22,6 +23,10 @@
   // success colors
   --success-color-70: #e2f8f0b3;
 
+    // Testimonials colors
+  --testimonials-colors-btn: #1d1e25;
+  --testimonials-colors-arrow: #fff;
+
   // Logo colors
   --logo-color-text: #101010;
   --logo-color-circle: #101010;
@@ -29,9 +34,20 @@
   // bg colors
   --black-bg-color: #1d1e25;
 
+  // Overview Colors
+  --overview-bg-color: #1d1e25;
+  --overview-text-color: #fff;
+
   // container
   --container-padding: 15px;
   --container-width: 1200px;
+  --container-width-post: 940px;
+
+   // Footer colors
+  --footer-bg-color: #1d1e25;
+
+    // Blog colors
+  --blog-bg-color: #1d1e25;
 
   @include mini-desktop {
     --container-width: 1000px;
@@ -62,15 +78,32 @@
   --neutral-color-90: #fff;
   --neutral-color-100: #fff;
   --neutral-color-140: #f5f5f5;
+  --neutral-color-160: #fff;
 
   // Logo colors
   --logo-color-text: #fff;
   --logo-color-circle: #343542;
+
+   // Overview Colors
+  --overview-bg-color: #18181d;
+
+    // Blog colors
+  --blog-bg-color: #18181d;
 
   // success colors
   --success-color-70: #e2f8f033;
 
   // overview coors
   --black-bg-color: #18181d;
+
+  // Footer colors
+  --footer-bg-color: #18181d;
+
+  // Success colors
+  --success-colors-70: #e2f8f033;
+
+  // Testimonials colors
+  --testimonials-colors-btn: #ced1d8;
+  --testimonials-colors-arrow: #000;
 
 }

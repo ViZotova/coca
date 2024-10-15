@@ -1,25 +1,27 @@
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import injectHTML from "vite-plugin-html-inject";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
+import injectHTML from "vite-plugin-html-inject";
 
 export default defineConfig({
   root: "./src",
   base: "/coca/",
   server: {
     port: 3000,
+    open: true,
   },
-  publicDir: "./src/assers",
+  publicDir: "./src/assets/",
   build: {
-    sourcemap: true,
     outDir: "../dist",
-    emptyOutDir: "true",
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: "./src/index.html",
-        about: "./src/about.html",
         pricing: "./src/pricing.html",
         contact: "./src/contact.html",
+        about: "./src/about.html",
+        blog: "./src/blog.html",
+        post: "./src/post.html",
       },
     },
   },

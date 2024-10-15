@@ -3,46 +3,37 @@
     <h2 class="hero__title heading-h1">
       Contact our team to find out more
     </h2>
-    <div class="hero__map">
-      <div class="hero__map-api" id="map"></div>
-      <script src="https://api-maps.yandex.ru/2.1/?apikey=359bb2b1-ebc8-46f3-a2a2-2cee85dc957a&lang=ru_RU" type="text/javascript">
-  </script>
-<script type="text/javascript">
-    ymaps.ready(init);
-    function init(){
-      let myMap = new ymaps.Map("map", {
-        center: [-37.800013,144.984089],
-        zoom: 7
-      });
-    }
-  </script>
+    <div class="hero__map-wrapper">
+      <div class="map__content">
+        <div id="map"></div>
+      </div>
       <ul class="hero__contacts">
-        <li class="hero__contacts-item">
+        <li class="hero__contacts-item text-p-default">
           <h3 class="hero__contacts-item-title text-p-large">
             Support
           </h3>
-          <p class="hero__contacts-item-text text-p-default">
+          <p class="hero__contacts-item-descr">
             Our friendly team is here to help.
           </p>
-          <a class="hero__contacts-item-link text-p-default" href="mailto:support@sans.com">support@sans.com</a>
+          <a class="hero__contacts-item-link" href="mailto:support@sans.com">support@sans.com</a>
         </li>
-        <li class="hero__contacts-item">
+        <li class="hero__contacts-item text-p-default">
           <h3 class="hero__contacts-item-title text-p-large">
             Sales
           </h3>
-          <p class="hero__contacts-item-text text-p-default">
+          <p class="hero__contacts-item-descr">
             Questions or queries? Get in touch!
           </p>
-          <a class="hero__contacts-item-link text-p-default" href="mailto:sales@sans.com">sales@sans.com</a>
+          <a class="hero__contacts-item-link" href="mailto:sales@sans.com">sales@sans.com</a>
         </li>
-        <li class="hero__contacts-item">
+        <li class="hero__contacts-item text-p-default">
           <h3 class="hero__contacts-item-title text-p-large">
             Phone
           </h3>
-          <p class="hero__contacts-item-text text-p-default">
+          <p class="hero__contacts-item-descr">
             Mon-Fri from 8am to 5pm.
           </p>
-          <a class="hero__contacts-item-link text-p-default" href="tel:+14353457655">+1 (435) 345-7655</a>
+          <a class="hero__contacts-item-link" href="tel:+14353457655">+1 (435) 345-7655</a>
         </li>
       </ul>
     </div>

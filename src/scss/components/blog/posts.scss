@@ -1,0 +1,138 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable order/properties-order */
+.posts {
+  padding: 120px 0;
+  color: #fff;
+  background-color: var(--blog-bg-color);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
+
+    @include small-tablet {
+      gap: 0 15px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.article {
+  max-width: 584px;
+
+  @include mobile {
+    margin-bottom: 120px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-child(4n + 3) {
+    margin-top: 148px;
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(4n + 4) {
+    margin-top: -92px;
+
+    @include mini-desktop {
+      margin-top: -52px;
+    }
+
+    @include tablet {
+      margin-top: -22px;
+    }
+
+    @include small-tablet {
+      margin-top: -2px;
+    }
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(8n + 5),
+  &:nth-child(8n + 6),
+  &:nth-child(8n + 9),
+  &:nth-child(8n + 10) {
+    margin-top: 159px;
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(4n + 1),
+  &:nth-child(4n + 4) {
+    max-height: 991px;
+  }
+
+  &:nth-child(4n + 1) &__img,
+  &:nth-child(4n + 4) &__img {
+    padding-bottom: calc(751 / 584 * 100%);
+  }
+
+  &:nth-child(4n + 2),
+  &:nth-child(4n + 3) {
+    max-height: 991px;
+  }
+
+  &:nth-child(4n + 2) &__img,
+  &:nth-child(4n + 3) &__img {
+    padding-bottom: calc(511 / 584 * 100%);
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    max-width: 584px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__descr {
+    max-height: 216px;
+    height: 100%;
+    margin-top: 24px;
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    -webkit-line-clamp: 2; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+  }
+
+  &__text {
+    margin-top: 24px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--neutral-color-150);
+    max-height: 571px;
+    -webkit-line-clamp: 3; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+}

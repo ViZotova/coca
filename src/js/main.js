@@ -1,21 +1,23 @@
 import "/scss/main.scss";
 
-// components
-import { useTheme } from "./components/theme";
-import { useBurger } from "./components/burger";
-import { useHeader } from "./components/header";
-import {
-  useInsightSlider,
-  useTestimonialsSlider,
-} from "./components/home/slider";
-import { usePartnerItems } from "./components/partners";
-import { useFooterAcc } from "./components/footer";
-
-
+// Components
+import { useTheme } from "./components/theme.js";
 useTheme();
+
+import { useBurger } from "./components/burger.js";
 useBurger();
-useInsightSlider();
-useTestimonialsSlider();
-useTestimonialsSlider();
+
+import { useHeader } from "./components/header.js";
 useHeader();
-usePartnerItems();
+
+import {
+  useSlider,
+  useTestimonialsSlider,
+  usePartnersSlider,
+} from "./components/home/slider.js";
+useSlider();
+useTestimonialsSlider();
+usePartnersSlider();
+
+import { useAccordion } from "./components/accordion.js";
+useAccordion();

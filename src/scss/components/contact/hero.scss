@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 .hero {
   padding: 90px 0 38px;
 
@@ -22,24 +23,31 @@
   }
 
   &__map {
-    @include flex-all-between;
-    gap: 86px;
-
-    @include tablet {
-      flex-direction: column;
-    }
+    width: 100%;
+    height: 544px;
 
     @include mobile {
-      gap: 36px;
+      height: 400px;
     }
 
-    &-api {
-      width: 600px;
-      height: 400px;
+    &-wrapper {
+      @include flex-align-center-between;
+      gap: 80px;
+
+      @include tablet {
+        gap: 40px;
+        flex-direction: column;
+      }
+
+      @include mobile {
+        gap: 30px;
+      }
     }
   }
 
   &__contacts {
+    display: grid;
+    gap: 40px;
     max-width: 176px;
 
     @include tablet {
@@ -47,51 +55,79 @@
       gap: 40px;
       max-width: 100%;
 
-      @include small-tablet {
-      flex-direction: column;
-      text-align: center;
-      }
-
       @include mobile {
-        gap: 20px;
+        display: grid;
+        text-align: center;
       }
-    }
 
     &-item {
       border-bottom: 1px solid var(--neutral-color-50);
       padding-bottom: 14px;
 
-      @include small-tablet {
-        width: 100%;
+      @include tablet {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        padding-bottom: 0;
+      }
+
+      @include mobile {
+        padding-bottom: 14px;
       }
 
       &:not(:last-child) {
         margin-bottom: 40px;
+      }
+
+      &-title {
+        margin-bottom: 17px;
+        font-weight: 700;
+        line-height: 133%;
+        color: var(--neutral-color-100);
+      }
+
+      &-descr {
+        margin-bottom: 17px;
+        font-weight: 400;
+        line-height: 150%;
+        color: var(--neutral-color-150);
 
         @include tablet {
           margin-bottom: 0;
         }
       }
 
-      &-title {
-        margin-bottom: 8px;
-        font-weight: 700;
-        line-height: 133%;
-        color: var(--neutral-color-100);
-      }
-
-      &-text {
-        margin-bottom: 20px;
-        font-weight: 400;
-        line-height: 150%;
-        color: var(--neutral-color-150);
-      }
-
       &-link {
         font-weight: 500;
         line-height: 162%;
         color: var(--neutral-color-100);
+        transition: opacity var(--transition);
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        @include tablet {
+          margin-top: 10px;
+        }
       }
     }
   }
+}
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.ymaps3x0--marker {
+  img {
+    max-width: inherit;
+  }
+}
+
+.my-marker {
+  position: relative;
+  transform: translate(-50%, calc(-50% - 24px));
+  cursor: pointer;
 }

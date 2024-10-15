@@ -1,0 +1,157 @@
+/* stylelint-disable order/properties-order */
+.articles {
+  padding: 160px 0;
+
+  &__top {
+    @include flex-align-center-between;
+    gap: 15px;
+
+    @include small-mobile {
+      flex-wrap: wrap;
+    }
+
+    &-wrapper {
+      max-width: 435px;
+    }
+
+    &-title {
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+    }
+
+    &-descr {
+      margin-top: 24px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--neutral-color-150);
+    }
+
+    &-nav {
+      @include flex-align-center;
+      z-index: 2;
+      gap: 16px;
+    }
+
+    &-btn {
+      @include flex-all-center;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background: var(--testimonials-colors-btn);
+      transition: var(--transition);
+
+      @include small-mobile {
+        width: 40px;
+        height: 40px;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      svg {
+        path {
+          fill: var(--testimonials-colors-arrow);
+        }
+      }
+
+      &.swiper-button-disabled {
+        border: 1px solid #ced1d8;
+        background: #fff;
+
+        svg {
+          path {
+            fill: #ced1d8;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider {
+    width: 1320px;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+
+  &__slide {
+    max-width: 407px;
+    max-height: 1075px;
+
+    &:nth-child(3n + 3) {
+      max-width: 476px;
+    }
+
+    &-container {
+      overflow: hidden;
+      margin-top: 80px;
+    }
+
+    &-img {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &:nth-child(3n + 1) &-img {
+      padding-bottom: calc(577 / 407 * 100%);
+      max-width: 577px;
+    }
+
+    &:nth-child(3n + 2) &-img {
+      padding-bottom: calc(329 / 407 * 100%);
+      max-width: 407px;
+    }
+
+    &:nth-child(3n + 3) &-img {
+      padding-bottom: calc(695 / 476 * 100%);
+      max-width: 476px;
+    }
+
+    &-title {
+      margin-top: 24px;
+      font-weight: 600;
+      line-height: 1.3125;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+      -webkit-line-clamp: 3; 
+      display: -webkit-box; 
+      -webkit-box-orient: vertical; 
+      overflow: hidden; 
+    }
+
+    &-descr {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--neutral-color-150);
+      -webkit-line-clamp: 4; 
+      display: -webkit-box; 
+      -webkit-box-orient: vertical; 
+      overflow: hidden; 
+    }
+
+    &-btn {
+      display: inline-block;
+      border: 1px solid #ced1d8;
+      padding: 16px 44px;
+      color: var(--neutral-color-100);
+    }
+  }
+}

@@ -1,44 +1,54 @@
-export const usePriceSwitcher = () => {
-  const switcher = document.querySelector('[data-price="swticher"]');
+export const usePriceSwither = () => {
+  const swither = document.querySelector('[data-price="swither"]');
   const starterPrice = document.querySelector('[data-price="starter"]');
   const popularPrice = document.querySelector('[data-price="popular"]');
-  const entriesPrice = document.querySelector('[data-price="enterprise"]');
+  const enterprisePrice = document.querySelector('[data-price="enterprise"]');
+  const procePeriod = document.querySelectorAll("[data-period]");
 
   const priceList = {
     starter: {
-      default: 120,
-      witchSale: 120 * 12 * 0.8,
+      monthlyPrice: 10,
+      annualPrice: 100,
     },
     popular: {
-      default: 1680,
-      witchSale: 1680 * 12 * 0.8,
+      monthlyPrice: 140,
+      annualPrice: 1400,
     },
     enterprise: {
-      default: 2520,
-      wtichSale: 2520 * 12 * 0.8,
+      monthlyPrice: 210,
+      annualPrice: 2100,
     },
   };
 
-  const setPricesWitchSale = () => {
-    starterPrice.textContent = priceList.starter.witchSale;
-    popularPrice.textContent = priceList.popular.witchSale;
-    entriesPrice.textContent = priceList.enterprise.wtichSale;
+  const setPricesAnnual = () => {
+    starterPrice.textContent = priceList.starter.annualPrice;
+    popularPrice.textContent = priceList.popular.annualPrice;
+    enterprisePrice.textContent = priceList.enterprise.annualPrice;
   };
 
-  const setDefaultPrices = () => {
-    starterPrice.textContent = priceList.starter.default;
-    popularPrice.textContent = priceList.popular.default;
-    entriesPrice.textContent = priceList.enterprise.default;
+  const setPricesMonthly = () => {
+    starterPrice.textContent = priceList.starter.monthlyPrice;
+    popularPrice.textContent = priceList.popular.monthlyPrice;
+    enterprisePrice.textContent = priceList.enterprise.monthlyPrice;
   };
 
-  switcher.checked = true;
-  setPricesWitchSale();
+  swither.checked = true;
 
-  switcher.addEventListener("click", () => {
-    if (switcher.checked) {
-      setPricesWitchSale();
+  swither.addEventListener("change", () => {
+    if (swither.checked) {
+      setPricesAnnual();
     } else {
-      setDefaultPrices();
+      setPricesMonthly();
     }
+  });
+
+  procePeriod.forEach((e) => {
+    swither.addEventListener("change", () => {
+      if (swither.checked) {
+        e.textContent = "/year";
+      } else {
+        e.textContent = "/month";
+      }
+    });
   });
 };
