@@ -1,18 +1,20 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import pinIcon from "/assets/icons/pin.svg";
+
 export const useMap = () => {
   window.map = null;
+
   main();
   async function main() {
-    await YMap.ready;
+    await ymaps.ready;
     const {
       YMap,
       YMapDefaultSchemeLayer,
-      // eslint-disable-next-line no-unused-vars
       YMapControls,
       YMapDefaultFeaturesLayer,
       YMapMarker,
-    } = ymaps3;
+    } = ymaps;
 
     const CENTER_COORDINATES = [27.638275176010463, 19.29606083828731];
     const MARKER_COORDINATES = [133.51145358313894, -22.691745335256936];
@@ -6757,21 +6759,48 @@ export const useMap = () => {
         },
       },
     ];
+
+    // Создание объекта карты
     map = new YMap(document.getElementById("map"), { location: LOCATION });
 
+    // Добавление слоев на карту
     map.addChild(
       new YMapDefaultSchemeLayer({ customization: PASTE_JSON_HERE }),
     );
     map.addChild(new YMapDefaultFeaturesLayer());
 
+    // Добавление элементов управления на карту
+    // map.addChild(new YMapControls({ position: 'right' }).addChild(new YMapZoomControl({})));
+    // map.addChild(
+    //   new YMapControls({ position: 'top right' }).addChild(new YMapGeolocationControl({})),
+    // );
+
+    // Создание маркера
     const el = document.createElement("img");
     el.className = "my-marker";
+    // el.src = './assets/icons/map/pin.svg';
     el.src = pinIcon;
     el.title = "Маркер";
+    // При клике на маркер меняем центр карты на LOCATION с заданным duration
+    // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
+
+    // Создание заголовка маркера
+
+    // const markerTitle = document.createElement('div');
+    // markerTitle.className = 'marker-title';
+    // markerTitle.innerHTML = 'Заголовок маркера';
+
+    // Контейнер для элементов маркера
     const imgContainer = document.createElement("div");
     imgContainer.appendChild(el);
+    // Активируем заготовок маркера
+
+    // imgContainer.appendChild(markerTitle);
+
+    // Добавление центра карты
     map.addChild(new YMapMarker({ coordinates: CENTER_COORDINATES }));
 
+    // Добавление маркера на карту
     map.addChild(
       new YMapMarker({ coordinates: MARKER_COORDINATES }, imgContainer),
     );

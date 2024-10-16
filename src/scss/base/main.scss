@@ -1,3 +1,4 @@
+/* stylelint-disable font-family-name-quotes */
 // Reset
 *,
 *::before,
@@ -46,7 +47,7 @@ label {
 // General
 html {
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
   scroll-behavior: smooth !important;

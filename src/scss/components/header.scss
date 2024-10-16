@@ -1,5 +1,4 @@
 .header {
-  padding: 26px 0 22px;
   background-color: var(--neutral-color-10);
   opacity: 0;
   visibility: hidden;
@@ -82,9 +81,6 @@
     }
   }
 
-  // &__nav {
-  // }
-
   &__switcher {
     position: relative;
     border-radius: 13px;
@@ -151,8 +147,6 @@
     }
   }
 
-  // &__item {
-  // }
 
   &__link {
     position: relative;
